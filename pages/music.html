@@ -192,6 +192,17 @@
         '</div>';
       container.appendChild(player);
     });
+    
+    // Add visible class to all players after they're created
+    // Use requestAnimationFrame to ensure browser has rendered the elements first
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        var players = document.querySelectorAll('.music-player.reveal');
+        players.forEach(function(player) {
+          player.classList.add('visible');
+        });
+      });
+    });
 
     // Playback controls
     document.querySelectorAll('.music-player__btn--play').forEach(function(btn) {
