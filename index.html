@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Itay Bracha | Developer &amp; Creative Technologist</title>
+  <meta name="description" content="Portfolio of Itay Bracha — Developer, musician, and creative technologist specializing in computer vision, VFX, and interactive media.">
+  <meta name="keywords" content="Itay Bracha, developer, portfolio, computer vision, VFX, music, creative coding">
+  <meta name="author" content="Itay Bracha">
+  <meta property="og:title" content="Itay Bracha | Developer &amp; Creative Technologist">
+  <meta property="og:description" content="Explore projects, music, and creative experiments by Itay Bracha.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://itaybracha.github.io/">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo">ITAY BRACHA</a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/projects.html">Projects</a></li>
+      <li><a href="pages/music.html">Music</a></li>
+      <li><a href="pages/videos.html">Videos</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/surprise.html">Surprise</a></li>
+    </ul>
+    <div class="nav__burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero__greeting">// Hello, World</p>
+      <h1 class="hero__name">Itay Bracha</h1>
+      <p class="hero__tagline">Developer &amp; Creative Technologist — crafting at the intersection of code, vision, and sound.</p>
+      <div class="hero__cta-group">
+        <a href="pages/projects.html" class="btn btn--primary">View Projects</a>
+        <a href="pages/about.html" class="btn btn--outline">About Me</a>
+      </div>
+    </section>
+
+    <!-- Explore — Redesigned bento-grid -->
+    <section class="section">
+      <h2 class="section__title reveal">Explore</h2>
+      <p class="section__subtitle reveal">Dive into what I do — from code to compositions.</p>
+
+      <div class="explore-grid reveal">
+        <a href="pages/projects.html" class="explore-card explore-card--projects">
+          <span class="explore-card__bg-icon">&#128187;</span>
+          <span class="explore-card__arrow">&nearr;</span>
+          <div class="explore-card__content">
+            <div class="explore-card__label">Engineering</div>
+            <h3 class="explore-card__title">Projects</h3>
+            <p class="explore-card__desc">Interactive apps, computer vision systems, and creative tools engineered from scratch.</p>
+          </div>
+        </a>
+
+        <a href="pages/music.html" class="explore-card explore-card--music">
+          <span class="explore-card__bg-icon">&#127925;</span>
+          <span class="explore-card__arrow">&nearr;</span>
+          <div class="explore-card__content">
+            <div class="explore-card__label">Sound</div>
+            <h3 class="explore-card__title">Music</h3>
+            <p class="explore-card__desc">Original tracks with audio-reactive visuals that pulse to every beat.</p>
+          </div>
+        </a>
+
+        <a href="pages/videos.html" class="explore-card explore-card--videos">
+          <span class="explore-card__bg-icon">&#127916;</span>
+          <span class="explore-card__arrow">&nearr;</span>
+          <div class="explore-card__content">
+            <div class="explore-card__label">Motion</div>
+            <h3 class="explore-card__title">Videos</h3>
+            <p class="explore-card__desc">Music videos, VFX breakdowns, and creative experiments in motion.</p>
+          </div>
+        </a>
+
+        <a href="pages/about.html" class="explore-card explore-card--about">
+          <span class="explore-card__bg-icon">&#128100;</span>
+          <span class="explore-card__arrow">&nearr;</span>
+          <div class="explore-card__content">
+            <div class="explore-card__label">Story</div>
+            <h3 class="explore-card__title">About</h3>
+            <p class="explore-card__desc">The person behind the screen — skills, passions, and the journey.</p>
+          </div>
+        </a>
+
+        <a href="pages/surprise.html" class="explore-card explore-card--surprise">
+          <span class="explore-card__bg-icon">&#127918;</span>
+          <span class="explore-card__arrow">&nearr;</span>
+          <div class="explore-card__content">
+            <div class="explore-card__label">???</div>
+            <h3 class="explore-card__title">Surprise</h3>
+            <p class="explore-card__desc">An easter egg awaits.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__links">
+      <a href="https://github.com/itaybracha" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/itaybracha" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p>&copy; 2026 Itay Bracha. All rights reserved.</p>
+  </footer>
+
+  <script src="js/bg3d.js"></script>
+  <script src="js/audio-engine.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

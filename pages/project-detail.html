@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project | Itay Bracha</title>
+  <meta name="description" content="Detailed look at a project by Itay Bracha.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav__logo">ITAY BRACHA</a>
+    <ul class="nav__links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="surprise.html">Surprise</a></li>
+    </ul>
+    <div class="nav__burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="project-detail" id="project-content">
+      <!-- Populated by JS -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Itay Bracha. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/bg3d.js"></script>
+  <script src="../js/audio-engine.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/carousel.js"></script>
+  <script>
+    const projects = {
+      'vision-tracker': {
+        title: 'Vision Tracker',
+        description: `A real-time computer vision system that detects and tracks objects across video feeds using custom-trained models. Built with Python and OpenCV, this project implements multi-object tracking with Kalman filtering and Hungarian algorithm assignment. The system achieves 30+ FPS tracking on standard hardware and supports both webcam and file-based input streams.\n\nKey features include automatic object re-identification after occlusion, configurable detection zones, and a live dashboard showing tracking metrics and heatmaps. The project demonstrates advanced image processing techniques including background subtraction, contour analysis, and feature matching.`,
+        images: ['&#128065;', '&#128202;', '&#128187;', '&#127916;'],
+        tags: ['Computer Vision', 'Python', 'OpenCV', 'NumPy']
+      },
+      'audio-visualizer': {
+        title: 'Audio Visualizer Engine',
+        description: `An immersive audio visualization engine that transforms sound into stunning real-time graphics. Using the Web Audio API for frequency analysis and WebGL for rendering, this project creates reactive visual environments that respond to every beat, frequency, and amplitude change in the audio.\n\nThe engine supports multiple visualization modes including waveform landscapes, frequency spectrum mountains, particle systems driven by bass hits, and kaleidoscopic pattern generators. Custom GLSL shaders handle the rendering pipeline, achieving smooth 60fps visuals even with complex particle systems.`,
+        images: ['&#127926;', '&#127912;', '&#128165;', '&#127752;'],
+        tags: ['WebGL', 'JavaScript', 'Web Audio API', 'GLSL']
+      },
+      'vfx-pipeline': {
+        title: 'VFX Compositing Pipeline',
+        description: `An automated visual effects pipeline that streamlines the compositing workflow from raw footage to final output. This Python-based tool integrates with After Effects via ExtendScript and provides batch processing capabilities for common VFX tasks.\n\nFeatures include automated keying with spill suppression, multi-layer compositing with proper color space management, procedural lens flare and light wrap generation, and a node-based preview system. The pipeline reduced production time by 40% on collaborative short film projects.`,
+        images: ['&#127916;', '&#127912;', '&#128165;', '&#128187;'],
+        tags: ['VFX', 'After Effects', 'Python', 'Compositing']
+      },
+      'gesture-control': {
+        title: 'Gesture Control System',
+        description: `A hands-free computer interaction system using Google's MediaPipe framework for real-time hand tracking and gesture recognition. The system maps custom hand gestures to keyboard shortcuts, mouse movements, and application-specific commands.\n\nSupports over 15 distinct gestures including pinch-to-zoom, swipe navigation, and custom developer-defined poses. The recognition engine uses a combination of landmark distance calculations and temporal gesture patterns to differentiate between intentional gestures and natural hand movements.`,
+        images: ['&#9995;', '&#128187;', '&#128270;', '&#127918;'],
+        tags: ['MediaPipe', 'Python', 'HCI', 'Machine Learning']
+      },
+      'procedural-world': {
+        title: 'Procedural World Generator',
+        description: `A browser-based procedural terrain and world generator using Perlin noise, Voronoi diagrams, and cellular automata. The system generates unique landscapes with biomes, rivers, mountains, and settlements — all rendered on an HTML5 Canvas.\n\nThe generator supports infinite scrolling, multi-octave noise layering for realistic terrain, hydraulic erosion simulation, and a minimap overview. Users can customize generation parameters including sea level, mountain height, vegetation density, and climate zones through an intuitive control panel.`,
+        images: ['&#127758;', '&#127796;', '&#9968;', '&#127747;'],
+        tags: ['JavaScript', 'Canvas', 'Perlin Noise', 'Algorithms']
+      },
+      'midi-synth': {
+        title: 'MIDI Synth Controller',
+        description: `A web-based synthesizer with full MIDI controller support, built using the Web MIDI API and Tone.js. Features a virtual keyboard, oscillator controls, ADSR envelope shaping, and real-time effects processing including reverb, delay, and distortion.\n\nThe interface is designed to mirror professional hardware synths with knobs, faders, and patch management. Supports external MIDI device input with automatic mapping, preset saving/loading, and a sequencer for pattern-based composition.`,
+        images: ['&#127929;', '&#127925;', '&#127911;', '&#128187;'],
+        tags: ['Web MIDI', 'Tone.js', 'Audio Synthesis', 'UI Design']
+      }
+    };
+
+    function renderProject() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      const project = projects[id];
+      const container = document.getElementById('project-content');
+
+      if (!project) {
+        container.innerHTML = `
+          <a href="projects.html" class="project-detail__back">&larr; Back to Projects</a>
+          <h1 class="project-detail__title">Project Not Found</h1>
+          <p class="project-detail__desc">This project doesn't exist. Please go back to the projects page.</p>`;
+        return;
+      }
+
+      document.title = `${project.title} | Itay Bracha`;
+
+      const slidesHTML = project.images.map(img => `
+        <div class="carousel__slide">
+          <div class="carousel__slide-placeholder">${img}</div>
+        </div>`).join('');
+
+      const tagsHTML = project.tags.map(t => `<span class="project-card__tag">${t}</span>`).join('');
+
+      container.innerHTML = `
+        <a href="projects.html" class="project-detail__back reveal">&larr; Back to Projects</a>
+        <h1 class="project-detail__title reveal">${project.title}</h1>
+        <div class="project-card__tags reveal" style="margin-bottom:1.5rem;">${tagsHTML}</div>
+        <div class="carousel reveal-scale">
+          <div class="carousel__track">${slidesHTML}</div>
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous slide">&lsaquo;</button>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next slide">&rsaquo;</button>
+          <div class="carousel__dots"></div>
+        </div>
+        <div class="project-detail__desc reveal">${project.description.replace(/\n/g, '<br>')}</div>`;
+
+      // Re-init carousel and scroll reveals
+      initCarousels();
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+        new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        }, { threshold: 0.1 }).observe(el);
+      });
+    }
+
+    renderProject();
+  </script>
+</body>
+</html>

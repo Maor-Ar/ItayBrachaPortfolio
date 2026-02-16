@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.youtube.com)",
+      "mcp__playwright-mcp-server__playwright_navigate",
+      "Bash(where:*)",
+      "WebFetch(domain:mixedanalytics.com)",
+      "WebFetch(domain:commentpicker.com)",
+      "Bash(pip install:*)",
+      "Bash(npx playwright:*)",
+      "Bash(yt-dlp:*)",
+      "mcp__Desktop_Commander__start_process",
+      "Bash(chcp:*)",
+      "Bash(where.exe:*)",
+      "Bash(node:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}

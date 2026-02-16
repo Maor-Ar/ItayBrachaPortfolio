@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Itay Bracha</title>
+  <meta name="description" content="Explore Itay Bracha's software projects — computer vision, interactive tools, creative coding, and more.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav__logo">ITAY BRACHA</a>
+    <ul class="nav__links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="surprise.html">Surprise</a></li>
+    </ul>
+    <div class="nav__burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <section class="section">
+      <h1 class="section__title reveal">Projects</h1>
+      <p class="section__subtitle reveal">A curated gallery of applications and experiments I've built.</p>
+
+      <div class="project-gallery stagger-children">
+        <!-- Project 1 -->
+        <a href="project-detail.html?id=vision-tracker" class="project-card">
+          <div class="project-card__placeholder">&#128065;</div>
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">Vision Tracker</h3>
+            <div class="project-card__tags">
+              <span class="project-card__tag">Computer Vision</span>
+              <span class="project-card__tag">Python</span>
+              <span class="project-card__tag">OpenCV</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="project-detail.html?id=audio-visualizer" class="project-card">
+          <div class="project-card__placeholder">&#127926;</div>
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">Audio Visualizer Engine</h3>
+            <div class="project-card__tags">
+              <span class="project-card__tag">WebGL</span>
+              <span class="project-card__tag">JavaScript</span>
+              <span class="project-card__tag">Web Audio</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+        <a href="project-detail.html?id=vfx-pipeline" class="project-card">
+          <div class="project-card__placeholder">&#127916;</div>
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">VFX Compositing Pipeline</h3>
+            <div class="project-card__tags">
+              <span class="project-card__tag">VFX</span>
+              <span class="project-card__tag">After Effects</span>
+              <span class="project-card__tag">Python</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 4 -->
+        <a href="project-detail.html?id=gesture-control" class="project-card">
+          <div class="project-card__placeholder">&#9995;</div>
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">Gesture Control System</h3>
+            <div class="project-card__tags">
+              <span class="project-card__tag">MediaPipe</span>
+              <span class="project-card__tag">Python</span>
+              <span class="project-card__tag">HCI</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 5 -->
+        <a href="project-detail.html?id=procedural-world" class="project-card">
+          <div class="project-card__placeholder">&#127758;</div>
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">Procedural World Generator</h3>
+            <div class="project-card__tags">
+              <span class="project-card__tag">JavaScript</span>
+              <span class="project-card__tag">Canvas</span>
+              <span class="project-card__tag">Algorithms</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 6 -->
+        <a href="project-detail.html?id=midi-synth" class="project-card">
+          <div class="project-card__placeholder">&#127929;</div>
+          <div class="project-card__overlay">
+            <h3 class="project-card__title">MIDI Synth Controller</h3>
+            <div class="project-card__tags">
+              <span class="project-card__tag">Web MIDI</span>
+              <span class="project-card__tag">Tone.js</span>
+              <span class="project-card__tag">UI Design</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Itay Bracha. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/bg3d.js"></script>
+  <script src="../js/audio-engine.js"></script>
+  <script src="../js/nav.js"></script>
+</body>
+</html>
